@@ -16,6 +16,7 @@ body{
   height: 100%;
   width: 100%;
   bottom: 1%;
+  
 }
 .button{
   
@@ -50,32 +51,35 @@ height: 10%;
 position: fixed;
 }
 }
-.box{
-  position:fixed;
-  top:14%;
-  display: grid;
-  border: 5px solid black;
-  padding: 5%;
-  height: 60%;
-  width:100%;
-  background-color: rebeccapurple;
+
+
+.stats{
+  background-color:rgb(6, 87, 33);
+ 
+  height:30%;
 }
 .parking1{
-  padding: 20%;
-  
-}
-.stats{
-  position:fixed;
-  top:40%;
-  left:2%
+  height:70%
 }
 .parking_full{
-  position: absolute;
-  padding: 5%;
+  position:absolute;
+  padding: 0%;
   width: 20%;
-  height: 20%;
+  height:25%;
   margin: 1%;
   top:15%;
-  left:0%;
-  background-color: antiquewhite;
+  left:1%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 3px 5px grey;
+
+}
+.parking_full:hover{
+  box-shadow: 5px 5px 5px grey;
+  
+
+}
+.car{
+  height:30%;
+  width:20%;
+  margin-top:3%;
 }
