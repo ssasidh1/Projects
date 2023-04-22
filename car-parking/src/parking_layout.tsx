@@ -18,13 +18,13 @@ export default function ParkingL(){
 
 
 function ParkingIconGenerator(){
-    let status=[true,true,true,false]
-    let a:any =Array.from({length:4},(v,i)=>i);
+    let status=[true,true,true,false,false,true,"","",false]
+    let a:any =Array.from({length:9},(v,i)=>i);
     console.log("lnegth",a);
     
    let ret=a.map((i:number,id:number) => {
             console.log("here");
-            return <img id={`${id}`} onClick={book} src={status[id]?carT:carF} key={id} className='car' ></img>
+            return <img  id={`${id}`} onClick={book} src={status[id]?carT:carF} key={id} className='car' ></img>
         });
         
         console.log(ret);
@@ -38,7 +38,7 @@ function ParkingIconGenerator(){
                 console.log(el.src===carF)
                 if(el.src.split("3000")[1]===carT)el.src=carF
                 else el.src=carT
-                alert(el.src)
+                //alert(el.src)
             }
         }
         return ret;
