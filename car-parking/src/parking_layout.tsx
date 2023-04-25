@@ -20,8 +20,7 @@ export default function ParkingL(props:any){
 
 function ParkingIconGenerator(arr:any){
 
-    const client=new WebSocket("wss://13n38cpnrg.execute-api.us-west-1.amazonaws.com/Prod")
-    client.addEventListener("message",(event)=>console.log(JSON.parse(event.data)))
+    
 
  
     
@@ -35,7 +34,7 @@ function ParkingIconGenerator(arr:any){
             let el=event.target;
             let elId=el.getAttribute("id");
             console.log(el.src.split("3000")[1])
-            if (arr[elId])alert(" occupied")
+            if (arr[elId]==='used')alert(" occupied")
             else {
                 console.log(carT,carF)
                 console.log(el.src===carF)
