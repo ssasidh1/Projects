@@ -4,7 +4,7 @@ import carF from './lib/parking.png'
 import { useState } from 'react';
 export default function ParkingL(props:any){
 
-    
+    console.log("re rednering");
     return(
         // <div className = "box">
             <div className='parking1'>
@@ -23,13 +23,14 @@ function ParkingIconGenerator(arr:any){
     
 
  
-    
+   
    let ret=arr.map((i:string,id:number) => {
-            console.log("here");
+           
+           
             return <img  id={`${id}`} onClick={book} src={i==='used'?carT:carF} key={id} className='car' ></img>
         });
         
-        console.log(ret);
+       // console.log(ret);
         function book(event:any){
             let el=event.target;
             let elId=el.getAttribute("id");
