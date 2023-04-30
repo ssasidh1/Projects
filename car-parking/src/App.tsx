@@ -6,29 +6,38 @@ import ParkingL from './parking_layout';
 
 import ParkingF from './Parking';
 import { useState,useEffect } from 'react';
-import {totalLots,condition as cond}  from './config'
 // import  { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb"
 // import { ddbClient,credify} from "./config";
 // import {run} from "./aws/get"
 import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb"
 import { ddbClient, credify } from "./config.js";
 // Set the parameters
-
-
+import {condition as cond } from './config'
 function App() {
-  const cond:{[key:string]:string[]}={};
-      const aws=require('aws-sdk')
-      const ddb=new aws.DynamoDB({
-        region:'us-west-1',
-        accessKeyId:"AKIA3DC6ILKDZTWY7KPF",
-        secretAccessKey:"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"
-      })        
-   
-      console.log(cond)
+  // const cond:{[key:string]:string[]}={};
+      // const aws=require('aws-sdk')
+      // const ddb=new aws.DynamoDB({
+      //   region:'us-west-1',
+      //   accessKeyId:"AKIA3DC6ILKDZTWY7KPF",
+      //   secretAccessKey:"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"
+      // })        
+      
+      
        
        const [condition,setCondition]=useState(cond)
        useEffect(()=>{
-       
+        const prom=fetch('https://qrgc4tmah0.execute-api.us-east-1.amazonaws.com/prod').then(async (data)=>await data.json());
+        prom.then((val)=>{
+          console.log(JSON.parse(val.body))
+          const data=JSON.parse(val.body);
+          const obj:any={};
+          Object.values(data).forEach((val:any,id)=>{
+            obj[val.lotId]=val.status;
+          })
+          console.log(obj);
+          setCondition(obj)
+        })
+        
         const client=new WebSocket("wss://13n38cpnrg.execute-api.us-west-1.amazonaws.com/Prod")
         client.addEventListener("message",(event)=>{
          
@@ -46,18 +55,22 @@ function App() {
         })
       
         //-------------
-        ddb.scan({TableName:'CAR'},(err:any,data:any)=>{
-          data.Items.map((row:any,id:any)=>{
-           console.log("inside")
-            condition[row.lotId.S]=row.status.L.map((val:any)=>val.S)
-            setCondition({...condition})
-          })
-  })
+        // ddb.scan({TableName:'CAR'},(err:any,data:any)=>{
+        //   data.Items.map((row:any,id:any)=>{
+        //     // /console.log("Row\n",row)
+        //     //console.log("sattus array",(row.status.L))
+        //      condition[row.lotId.S]=row.status.L.map((val:any)=>val.S)
+        //      console.log("inside ",condition)
+        //      setCondition({...condition})
+        //   })
+          //console.log(data.Items);
+  // })
 
 
 
         //-------------
        },[])
+       console.log(" rendering app");
   return (
    <div className='appContainers'>
     
