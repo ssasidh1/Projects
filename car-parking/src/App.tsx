@@ -14,17 +14,9 @@ import { ddbClient, credify } from "./config.js";
 // Set the parameters
 import {condition as cond } from './config'
 function App() {
-  // const cond:{[key:string]:string[]}={};
-      // const aws=require('aws-sdk')
-      // const ddb=new aws.DynamoDB({
-      //   region:'us-west-1',
-      //   accessKeyId:"AKIA3DC6ILKDZTWY7KPF",
-      //   secretAccessKey:"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"
-      // })        
-      
-      
+ 
        
-       const [condition,setCondition]=useState(cond)
+       const [condition,setCondition]=useState({})
        useEffect(()=>{
         const prom=fetch('https://qrgc4tmah0.execute-api.us-east-1.amazonaws.com/prod').then(async (data)=>await data.json());
         prom.then((val)=>{
@@ -90,7 +82,7 @@ function App() {
   );
 }
 function Parkinglots(condition:any){
-  return Object.keys(condition).map((val:string,id)=><ParkingF state={condition[val]} key={id} />)     
+  return Object.keys(condition).map((val:string,id)=><ParkingF lotId={val} state={condition[val]} key={id} />)     
   //return Array(totalLots).fill(1).map((val,id)=><ParkingF state={condition[id]} key={id} />)
 }
 export default App;

@@ -10,7 +10,12 @@ margin-top: 0%;
  
 
 }
-
+.lotId{
+  
+ margin-top:1%;
+ margin-left:49%;
+ margin-bottom: 0%;
+}
 html{
 height:100vh
 }
@@ -107,12 +112,14 @@ h1 {
 @media only screen {
 .stats{
   background-color:rgb(7, 63, 41,0.98);
-  
-  margin-top: 17vh;
+  box-shadow: 0.5rem 0rem 1rem grey;
+  margin-top: 19vh;
   height:12VH;
+  
 }}
 .stats:hover{
   background-color:rgb(7, 63, 41,1);
+  
 }
 @media only screen {
 .parking1{
@@ -143,7 +150,7 @@ h1 {
  z-index: 0;
 
   background-color: rgb(255, 253, 253);
-  box-shadow: 0.5rem 0rem 1rem grey;
+  box-shadow: 0.5rem 0rem 0.5rem grey;
 
 }
 }
