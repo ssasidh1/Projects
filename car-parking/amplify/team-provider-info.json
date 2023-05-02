@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-parkinglot-dev-181100-authRole",
+      "UnauthRoleArn": "arn:aws:iam::762554374791:role/amplify-parkinglot-dev-181100-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::762554374791:role/amplify-parkinglot-dev-181100-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-parkinglot-dev-181100-deployment",
+      "UnauthRoleName": "amplify-parkinglot-dev-181100-unauthRole",
+      "StackName": "amplify-parkinglot-dev-181100",
+      "StackId": "arn:aws:cloudformation:us-east-1:762554374791:stack/amplify-parkinglot-dev-181100/e571f650-e7a3-11ed-901f-126048cd0ebd",
+      "AmplifyAppId": "dznyp2fl9b3yk"
+    },
+    "categories": {
+      "auth": {
+        "parkinglotead750a7": {}
+      }
+    }
+  }
+}

@@ -35,7 +35,7 @@ function ParkingIconGenerator(arr:any){
             let el=event.target;
             let elId=el.getAttribute("id");
             console.log(el.src.split("3000")[1])
-            if (arr[elId])alert(" occupied")
+            if (arr[elId]!=="free")alert(" occupied")
             else {
                 console.log(carT,carF)
                 console.log(el.src===carF)
