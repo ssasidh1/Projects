@@ -44,7 +44,7 @@ function App() {
             setCondition({...cond})
             
           }
-        })
+        }) 
       
         //-------------
         // ddb.scan({TableName:'CAR'},(err:any,data:any)=>{
