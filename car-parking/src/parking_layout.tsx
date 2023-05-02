@@ -4,7 +4,7 @@ import carF from './lib/parking.png'
 import { useState } from 'react';
 export default function ParkingL(props:any){
 
-    
+    console.log("re rednering");
     return(
         // <div className = "box">
             <div className='parking1'>
@@ -20,22 +20,22 @@ export default function ParkingL(props:any){
 
 function ParkingIconGenerator(arr:any){
 
-    const client=new WebSocket("wss://13n38cpnrg.execute-api.us-west-1.amazonaws.com/Prod")
-    client.addEventListener("message",(event)=>console.log(JSON.parse(event.data)))
+    
 
  
-    
+   
    let ret=arr.map((i:string,id:number) => {
-            console.log("here");
+           
+           
             return <img  id={`${id}`} onClick={book} src={i==='used'?carT:carF} key={id} className='car' ></img>
         });
         
-        console.log(ret);
+       // console.log(ret);
         function book(event:any){
             let el=event.target;
             let elId=el.getAttribute("id");
             console.log(el.src.split("3000")[1])
-            if (arr[elId]!=="free")alert(" occupied")
+            if (arr[elId]==='used')alert(" occupied")
             else {
                 console.log(carT,carF)
                 console.log(el.src===carF)
