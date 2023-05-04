@@ -7,7 +7,7 @@ import ParkingL from './parking_layout';
 import ParkingF from './Parking';
 import {totalLots,condition} from './config'
 import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
+//import awsconfig from './aws-exports';
 
 import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
@@ -21,7 +21,7 @@ import { DynamoDBClient, ScanCommand } from "@aws-sdk/client-dynamodb"
 import { ddbClient, credify } from "./config.js";
 // Set the parameters
 import {condition as cond } from './config'
-Amplify.configure(awsconfig);
+//Amplify.configure(awsconfig);
 function App({signOut}:any) {
 
   
