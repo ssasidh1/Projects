@@ -25,14 +25,15 @@ Amplify.configure(awsconfig);
 function App({signOut}:any) {
 
   
-       
-       const [condition,setCondition]=useState({})
+      const t:{[key:string]:string[]}={};
+       const [condition,setCondition]=useState(t)
        useEffect(()=>{
         const prom=fetch('https://qrgc4tmah0.execute-api.us-east-1.amazonaws.com/prod').then(async (data)=>await data.json());
         prom.then((val)=>{
           console.log(JSON.parse(val.body))
           const data=JSON.parse(val.body);
           const obj:any={};
+          console.log("data----",data)
           Object.values(data).forEach((val:any,id)=>{
             obj[val.lotId]=val.status;
           })
@@ -42,16 +43,19 @@ function App({signOut}:any) {
         
         const client=new WebSocket("wss://13n38cpnrg.execute-api.us-west-1.amazonaws.com/Prod")
         client.addEventListener("message",(event)=>{
-         
+          
           const data=JSON.parse(event.data);
           //console.log(data)
           for(let rec of data.Records){
-            const lotId:any=rec.dynamodb.NewImage.lotId.S
+            const lotId:string=rec.dynamodb.NewImage.lotId.S
             const status=rec.dynamodb.NewImage.status.L
             const arr=status.map((obj:any)=>obj.S)
-            console.log(lotId)
-            cond[lotId]=arr;
-            setCondition({...cond})
+            
+            const conds={...condition}
+            console.log(lotId,conds,"\n------\n",condition,"\n*****\n")
+            conds[lotId]=arr;
+            console.log(conds)
+            setCondition((condition)=>{return {...condition,[lotId]:arr}})
             
           }
         }) 

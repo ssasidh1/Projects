@@ -73,15 +73,13 @@ body{
   top:0%;
   
 }
-.stickyfooter{
-  position:sticky;
-  
-  font-size: 1.5vw;
-  padding-bottom: .5rem;
-  padding-left: 40vw;
- 
-}
 
+.lotId{
+  
+  margin-top:1%;
+  margin-left:40%;
+  margin-bottom: 0;
+ }
 .enclosure{
   position:relative;
   left:300%;
@@ -127,7 +125,7 @@ h1 {
   padding-bottom:1%;
   font-size: 0.6rem;
   margin-top: 17vh;
-  height:16VH;
+  height:20VH;
   width: 20vw;
   overflow:hidden;
   font-family: 'Merriweather', serif;
@@ -165,10 +163,10 @@ h1 {
 .parking_full{
  
   float:left;
-  margin-top:1vw;
+  margin-top:6vw;
   margin-left:2vw;
   width: 20vw;
-  height: 37vh;
+  height: 42vh;
   position:relative;
   box-sizing: border-box;
  z-index: 0;
