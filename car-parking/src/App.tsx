@@ -23,8 +23,8 @@ import { ddbClient, credify } from "./config.js";
 import {condition as cond } from './config'
 Amplify.configure(awsconfig);
 function App({signOut}:any) {
-  let email:any;
-  Auth.currentAuthenticatedUser().then((user)=>{email=(user.attributes.email);console.log(email)});
+
+  
        
        const [condition,setCondition]=useState({})
        useEffect(()=>{

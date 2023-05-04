@@ -15,19 +15,14 @@
  top:3.5vw;
 z-index:1;
 margin-top: 0%;
- 
 }
+
 s {
   display: block;
   font-size: 1vw;
   text-indent: 1em;
 }
-.lotId{
-  
- margin-top:1%;
- margin-left:40%;
- margin-bottom: 0%;
-}
+
 html{
 height:100vh
 }
@@ -53,18 +48,22 @@ body{
   cursor: pointer;
   background-color: rgb(7, 63, 41,0);
   color: white;
-  padding: 2.5vw;
+ 
   text-decoration: none;
- padding: 0vw 1vw 0vw 0vw;
- margin-right: 2%;
- margin-left: 1%;
- left: -60%;
+  padding: 0.5vw ;
+ margin-right: 4%;
+ margin-left: 0%;
+ left: -145%;
  
 } 
 .button:hover{
-  background: rgb(64, 153, 82,0.5);
+  background: rgba(124, 180, 135, 0.5);
   font-size: 1.3vw;
-  padding: 2.5vw;
+  padding: 0.5vw ;
+  margin-right: 4%;
+  margin-left: 0%;
+  left: -145%;
+
 }
 .image{
 
@@ -124,22 +123,27 @@ h1 {
 @media only screen {
 .stats{
   background-color:rgb(7, 63, 41,0.98);
-  box-shadow: 0.5rem 0rem 1rem grey;
-  margin-top: 19vh;
-  height:12VH;
-  
+  color:white;
+  padding-bottom:1%;
+  font-size: 0.6rem;
+  margin-top: 17vh;
+  height:16VH;
+  width: 20vw;
+  overflow:hidden;
+  font-family: 'Merriweather', serif;
+  box-shadow: 0.5rem 0rem 2rem grey;
+  border-radius: 5px 1px 1px 5px;
+  box-sizing: border-box;
 }}
 .stats:hover{
   background-color:rgb(7, 63, 41,1);
-  
 }
-@media only screen {
+
 .parking1{
   width: 20vw;
   
   padding:0.5vw;
  margin-bottom:0.5vw;
-}
 }
 
 .login{
@@ -164,15 +168,27 @@ h1 {
   margin-top:1vw;
   margin-left:2vw;
   width: 20vw;
-  height: 36vh;
+  height: 37vh;
   position:relative;
   box-sizing: border-box;
  z-index: 0;
 
   background-color: rgb(255, 253, 253);
-  box-shadow: 0.5rem 0rem 0.5rem grey;
-
+  box-shadow: 0.5rem 0rem 1rem grey;
+  border-radius: 5px;
 }
+}
+.bt{
+  width:7vw;
+  height:5vh;
+  font-size: 1vw;
+  font-family: 'Merriweather', serif;
+  margin-left:30%;
+  margin-bottom:15%;
+  border-radius:5px;
+  border:0px;
+  background-color:rgb(225, 240, 219);
+
 }
 @media only screen {
 .parking_full:hover{
